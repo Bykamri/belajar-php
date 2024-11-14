@@ -1,4 +1,4 @@
-<?php include("db_config.php"); ?>
+<?php include("./config/db_config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +14,7 @@
 <body>
     <div class="container">
         <h1>User Management</h1>
-        <a href="./newuser.php" class="new-user-btn"><i class="fas fa-user-plus"></i> New User</a>
+        <a href="./create_user/newuser.php" class="new-user-btn"><i class="fas fa-user-plus"></i> New User</a>
         <table>
             <thead>
                 <tr>
@@ -42,8 +42,8 @@
                     echo "<td>" . $user['Fakultas'] . "</td>";
                     echo "<td>" . $user['IPK'] . "</td>";
                     echo "<td>";
-                    echo "<a href='edit_user.php?id=" . $user['ID'] . "'><i class='fas fa-edit'></i> Edit</a> | ";
-                    echo "<a href='delete_user.php?id=" . $user['ID'] . "'><i class='fas fa-trash-alt'></i> Hapus</a>";
+                    echo "<a href='./edit_user/edit_user.php?id=" . $user['ID'] . "'><i class='fas fa-edit'></i> Edit</a> | ";
+                    echo "<a href='./delete_user/delete_user.php?id=" . $user['ID'] . "'><i class='fas fa-trash-alt'></i> Hapus</a>";
                     echo "</td>";
                     echo "</tr>";
                 }

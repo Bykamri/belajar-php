@@ -1,8 +1,6 @@
-<?php include("db_config.php");
+<?php include("../config/db_config.php");
 
-if (isset($_POST['simpan'])) {
-
-    $id = $_POST['id'];
+if (isset($_POST['submit'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
     $tgl_lahir = $_POST['tgl_lahir'];
@@ -18,13 +16,13 @@ if (isset($_POST['simpan'])) {
     // Convert date format if necessary
     $tgl_lahir = date('Y-m-d', strtotime($tgl_lahir));
 
-    $sql = "UPDATE user SET Nama='$nama', Alamat='$alamat', Tgl_lahir='$tgl_lahir', Prodi='$prodi', Fakultas='$fakultas', IPK='$ipk' WHERE ID=$id";
+    $sql = "INSERT INTO user (Nama, Alamat, Tgl_lahir, Prodi, Fakultas, IPK) VALUES ('$nama', '$alamat', '$tgl_lahir', '$prodi', '$fakultas', '$ipk')";
     $query = mysqli_query($db, $sql);
 
     if ($query) {
-        header('Location: index.php');
+        header('Location: index.php?status=sukses');
     } else {
-        die("Gagal menyimpan perubahan...");
+        header('Location: index.php?status=gagal');
     }
 } else {
     die("Akses dilarang ....");
