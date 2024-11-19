@@ -22,7 +22,7 @@ if (isset($_POST['simpan'])) {
     $query = mysqli_query($db, $sql);
 
     if ($query) {
-        header('Location: index.php');
+        header('Location: ../index.php');
     } else {
         die("Gagal menyimpan perubahan...");
     }

@@ -20,9 +20,9 @@ if (isset($_POST['submit'])) {
     $query = mysqli_query($db, $sql);
 
     if ($query) {
-        header('Location: index.php?status=sukses');
+        header('Location: ../index.php?status=sukses');
     } else {
-        header('Location: index.php?status=gagal');
+        header('Location: ../index.php?status=gagal');
     }
 } else {
     die("Akses dilarang ....");
